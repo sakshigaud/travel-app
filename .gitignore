@@ -1,0 +1,14 @@
+.idea
+/*.iml
+/*/*.iml
+/target
+/*/target
+/pom.xml.versionsBackup
+/*/pom.xml.versionsBackup
+/**/node_modules/
+/**/.vscode/
+yarn-error.log
+**/npm-debug.log
+/*/HELP.md
+*/.mvn
+*/mvnw
