@@ -17,7 +17,7 @@
 
     <modules>
         <module>travel-front</module>
-        <module>TravelPlaces</module>
+        <module>travel-server</module>
     </modules>
 
 </project>

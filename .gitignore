@@ -10,5 +10,10 @@
 yarn-error.log
 **/npm-debug.log
 /*/HELP.md
-*/.mvn
-*/mvnw
+!.mvn/wrapper/maven-wrapper.jar
+/.mvn/
+/mvnw
+/mvnw.bat
+mvnw.cmd
+/log/
+*.log*
