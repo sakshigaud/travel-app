@@ -9,6 +9,7 @@ import { Place } from 'src/model/Place';
 })
 export class PlaceListComponent implements OnInit {
 
+  editPlace= false;
   places: Place[];
 
   constructor(private placeService: PlaceService) { }
@@ -25,7 +26,8 @@ export class PlaceListComponent implements OnInit {
    }
 
    updatePlace(place){
-     this.placeService.updatePlace(place).subscribe(result =>console.log("Place"))
+         this.placeService.updatePlace(place).subscribe(result =>console.log("Place"));
+
    }
 
 }

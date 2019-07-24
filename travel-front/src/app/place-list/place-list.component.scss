@@ -1,10 +1,31 @@
 .delete {
-    padding-left:20px;
+  padding-right:20px;
   float:right;
+  transform: translateX(40px);
+  transition: all .3s cubic-bezier(1,1,1,1);
+  visibility: hidden;
 }
 
 .edit {
-    padding-left:20px;
-    margin:1px;
-    float:right;
+  float:right;
+    transform: translateX(45px);
+  transition: all .3s cubic-bezier(1,1,1,1); 
+  visibility: hidden;
+}
+
+
+.delete:focus { outline: none; }
+
+
+.item:hover .delete { display: block;
+  transform: translateX(-40px);
+  cursor:pointer;
+  visibility: visible;
+}
+
+.item:hover .edit { display: block;
+  transform: translateX(-45px);
+  cursor:pointer;
+  visibility: visible;
+
 }

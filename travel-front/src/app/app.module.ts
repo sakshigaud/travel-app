@@ -9,11 +9,13 @@ import { PlaceService } from 'src/service/place.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PlaceListComponent,
-    PlaceFormComponent
+    PlaceFormComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,25 +1,32 @@
 <div class="card my-5">
-    <div class="card-body">
+     <div class="card-body">
       <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+        <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">State</th>
             <th scope="col">Distance</th>
-            <th scope="col">Action</th>
+            <!-- <th scope="col">Action</th> -->
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let place of places">
-            <td >{{ place.id }}</td>
-            <td contenteditable="true">{{ place.name }}</td>
-            <td contenteditable="true">{{place.state}}</td>
-            <td contenteditable="true">{{place.distance}}</td>
-            <td>  <span class="delete"><a class="btn btn-info" (click)=delete(place)>&#215;</a></span>
-              <span class="edit"><a class="btn btn-info" (click)=updatePlace(place)>✎</a></span></td>
+            <!-- <tr  class="item"> -->
+          <tr *ngFor="let place of places" class="item">
+            <td>{{ place.id }}</td>
+            <td >{{ place.name }}</td>
+            <td >{{place.state}}</td>
+            <td >{{ place.distance }}
+                <span class="actions">
+                    <span class="edit"> <i class="fa fa-edit" (click) = updatePlace() ></i></span>
+                    <span class="delete"> <i class="fa fa-trash" (click) = delete(place)></i></span>
+                  </span>
+            
+              </td>   
           </tr>
+
         </tbody>
       </table>
+      <app-place-form *ngIf="editPlace"></app-place-form>
     </div>
   </div>
