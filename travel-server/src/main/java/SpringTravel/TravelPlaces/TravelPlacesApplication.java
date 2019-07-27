@@ -12,11 +12,12 @@ public class TravelPlacesApplication {
         SpringApplication.run(TravelPlacesApplication.class, args);
         System.out.println("Application Running on port: 8080!");
     }
+
     @Bean
     CommandLineRunner init(TravelRepo travel) {
         return args -> {
-             Place place = new Place("Chikmaglur", "KA", 250);
-                travel.save(place);
+            Place place = new Place("Chikmaglur", "KA", 250);
+            travel.save(place);
 
             travel.findAll().forEach(System.out::println);
         };

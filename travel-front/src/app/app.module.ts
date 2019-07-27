@@ -9,15 +9,17 @@ import { PlaceService } from 'src/service/place.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PlaceListComponent,
     PlaceFormComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule
+    AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
     
   ],
   providers: [PlaceService],

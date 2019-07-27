@@ -1,25 +1,70 @@
 <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">State</th>
-            <th scope="col">Distance</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let place of places">
-            <td >{{ place.id }}</td>
-            <td contenteditable="true">{{ place.name }}</td>
-            <td contenteditable="true">{{place.state}}</td>
-            <td contenteditable="true">{{place.distance}}</td>
-            <td>  <span class="delete"><a class="btn btn-info" (click)=delete(place)>&#215;</a></span>
-              <span class="edit"><a class="btn btn-info" (click)=updatePlace(place)>✎</a></span></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="card-body">
+
+    <div *ngIf="deletePlace" class="alert alert-warning">
+      <strong>Place removed from the list!</strong>
     </div>
+
+    <div *ngIf="editPlace" class="alert alert-success">
+      <strong>Place edited!</strong>
+    </div>
+    <!-- <table class="table table-bordered table-responsive-sm">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">State</th>
+          <th scope="col">Distance</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let place of places" class="item">
+        <td> <div contenteditable= "true" name="id" [textContent]="place.id" (input)="place.id=$event.target.textContent">{{place.id}}</div>
+       </td> <td> <div contenteditable= "true" name="id" [textContent]="place.id" (input)="place.id=$event.target.textContent">{{place.id}}</div>
+        </td> <td><div contenteditable= "true" name="id" [textContent]="place.id" (input)="place.id=$event.target.textContent">{{place.id}}</div>
+         - <td><input [(ngModel)]="place.id"></td>
+          <td><input [(ngModel)]="place.name"></td>
+          <td><input [(ngModel)]="place.state"></td> -->
+    <!-- <span><input [(ngModel)]="place.distance">   </span> -->
+    <!-- <span class="actions"> 
+                  <span class="edit"> <i class="fa fa-edit" (click) = "updatePlace(place)"></i></span>
+                  <span class="delete"> <i class="fa fa-trash" (click) ="delete(place)"></i></span>
+               </span> 
+               </td> 
+          </tr>
+      
+      </table> 
+       -->
+    <div class="row header-tab">
+      <div class="col-sm-1 header">#</div>
+      <div class="col-sm-3 header">Name</div>
+      <div class="col-sm-3 header">State</div>
+      <div class="col-sm-3 header">Distance</div>
+      <div class="col-sm-2 header"></div>
+    </div>
+    <div class="row item" *ngFor="let place of places">
+      <div class="col-sm-1" contenteditable="true" name="id" [textContent]="place.id"
+           (input)="place.id=$event.target.textContent">{{place.id}}
+      </div>
+      <div class="col-sm-3" contenteditable="true" name="name" [textContent]="place.name"
+           (input)="place.name=$event.target.textContent">{{place.name}}
+      </div>
+      <div class="col-sm-3" contenteditable="true" name="state" [textContent]="place.state"
+           (input)="place.state=$event.target.textContent">{{place.state}}
+      </div>
+      <div class="col-sm-3" contenteditable="true" name="distance" [textContent]="place.distance"
+           (input)="place.distance=$event.target.textContent">{{place.distance}}
+      </div>
+      <div class="col-sm-2">
+              <span class="actions"> 
+                  <span class="edit"> <i class="fa fa-edit" (click)="updatePlace(place)"></i></span>
+                  <span class="delete"> <i class="fa fa-trash" (click)="delete(place)"></i></span>
+               </span>
+      </div>
+    </div>
+
   </div>
+</div>
+
+

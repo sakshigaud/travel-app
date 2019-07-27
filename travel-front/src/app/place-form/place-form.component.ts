@@ -10,9 +10,13 @@ import { FormBuilder, FormGroup, FormArray, Validators, FormControl  } from '@an
   styleUrls: ['./place-form.component.scss']
 })
 export class PlaceFormComponent implements OnInit {
-  placeForm: FormGroup;
+  placeForm = new FormGroup({
+    city: new FormControl(''),
+    state: new FormControl(''),
+    distance: new FormControl(''),
+  });
   place : Place;
- 
+  addPlace: boolean;
   submitted = false;
  
   constructor(private route: ActivatedRoute, private router: Router, private placeService:PlaceService, private formBuilder: FormBuilder) {
@@ -20,10 +24,11 @@ export class PlaceFormComponent implements OnInit {
   
 }
 
-
    onSubmit(){
      this.placeService.save(this.place).subscribe(result =>this.displayList());
      this.placeForm.reset();
+     this.addPlace = true;
+     setTimeout(() => this.addPlace = false,2000);
     
    }
    

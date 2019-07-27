@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, OnChanges } from '@angular/core';
 import { PlaceService } from 'src/service/place.service';
 import { Place } from 'src/model/Place';
 
@@ -9,23 +9,43 @@ import { Place } from 'src/model/Place';
 })
 export class PlaceListComponent implements OnInit {
 
-  places: Place[];
-
+deletePlace: boolean;
+  editPlace: boolean;
+//places: Place[];
+  places = [
+    {id: "1", name: "Coorg",state: "KA", distance: 236},
+    {id: "2",name: "Kodaikanal",state: "TN", distance: 456}
+      ];
   constructor(private placeService: PlaceService) { }
 
   ngOnInit() {
-    this.placeService.findAll().subscribe(data => {
-      this.places = data;
-    });
+   console.log("fsfsf");
+   this.placeService.findAll().subscribe((place: Place[]) =>
+      this.places = place
+    // JSON.stringify(this.places);
+    //);
+   );
   }
 
   delete(place){
-    this.placeService.delete(place).subscribe(result =>this.placeService.displayList());
-    window.alert(`${place.name} deleted!`);
-   }
+
+   this.placeService.delete(place.id).subscribe(() =>this.placeService.findAll().subscribe((place: Place[]) =>
+   this.places = place
+ ));
+    this.deletePlace = true;
+    setTimeout(() => this.deletePlace = false, 2000);
+  }
 
    updatePlace(place){
-     this.placeService.updatePlace(place).subscribe(result =>console.log("Place"))
+     this.placeService.updatePlace(place).subscribe();
+        this.editPlace = true;
+       setTimeout(() => this.editPlace = false, 2000);
+
    }
+   displayList(){
+    this.placeService.displayList();
+
+  }
+
 
 }
