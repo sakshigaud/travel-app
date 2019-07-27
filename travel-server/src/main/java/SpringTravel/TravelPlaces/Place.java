@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Place {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String state;
@@ -18,10 +18,14 @@ public class Place {
     public Integer getId() {
         return id;
     }
-    public Place(){}
+
+    public Place() {
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public void setName(String name) {
         this.name = name;
     }

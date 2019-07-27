@@ -1,71 +1,70 @@
- <div class="card my-5">
-    <div class="card-body">
-        <div *ngIf="addPlace" class="alert alert-success">
-            <strong>Place Added!</strong> 
-          </div>
-      <form (ngSubmit)="onSubmit()" #placeForm="ngForm" >
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" [(ngModel)]="place.name" 
-            class="form-control" id="name" name="name" placeholder="Enter city name"
-            required #name="ngModel">
-        </div>
-
-        <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
-
-        <div class="form-group">
-          <label for="state">State</label>
-          <input type="text" [(ngModel)]="place.state" 
-            class="form-control" id="state" name="state" placeholder="Enter the state"
-            required #state="ngModel">
-          <div [hidden]="!state.pristine" class="alert alert-danger">State is required</div>
-        </div>
-
-        <div class="form-group">
-            <label for="distance">Distance</label>
-            <input type="text" [(ngModel)]="place.distance" 
-              class="form-control" id="distance" name="distance" placeholder="Enter the Distance"
-              required #distance="ngModel">
-
-            <div [hidden]="!distance.pristine" class="alert alert-danger">Distance is required</div>
-          </div>
-
-        <button type="submit" [disabled]="!placeForm.form.valid" class="btn btn-info">Submit</button>
-      </form>
+<div class="card my-5">
+  <div class="card-body">
+    <div *ngIf="addPlace" class="alert alert-success">
+      <strong>Place Added!</strong>
     </div>
-  </div>
- 
-
-
- <!-- <div class="card my-5">
-    <div class="card-body">
-      
-      <div *ngIf="addPlace" class="alert alert-success">
-          <strong>Place Added!</strong> 
-        </div>
-  <form  [formGroup]="placeForm" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #placeForm="ngForm">
       <div class="form-group">
-      <label for="city">
-        <strong>City</strong>
-        <input type="text" formControlName="city" class="form-control"  placeholder="Enter city name"  [(ngModel)]="place.name"  required>
-      </label>
-    </div>
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="place.name"
+               class="form-control" id="name" name="name" placeholder="Enter city name"
+               required #name="ngModel">
+      </div>
 
-    <div class="form-group">
-      <label for="state">
-        <strong>State</strong>
-        <input type="text" formControlName="state" class="form-control" placeholder="Enter state"  [(ngModel)]="place.state"  required>
-      </label>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" [(ngModel)]="place.state"
+               class="form-control" id="state" name="state" placeholder="Enter the state"
+               required #state="ngModel">
+        <div [hidden]="!state.pristine" class="alert alert-danger">State is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="distance">Distance</label>
+        <input type="text" [(ngModel)]="place.distance"
+               class="form-control" id="distance" name="distance" placeholder="Enter the Distance"
+               required #distance="ngModel">
+
+        <div [hidden]="!distance.pristine" class="alert alert-danger">Distance is required</div>
+      </div>
+
+      <button type="submit" [disabled]="!placeForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- <div class="card my-5">
+   <div class="card-body">
+
+     <div *ngIf="addPlace" class="alert alert-success">
+         <strong>Place Added!</strong>
+       </div>
+ <form  [formGroup]="placeForm" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+     <label for="city">
+       <strong>City</strong>
+       <input type="text" formControlName="city" class="form-control"  placeholder="Enter city name"  [(ngModel)]="place.name"  required>
+     </label>
    </div>
 
    <div class="form-group">
-    <label for="distance">
-      <strong>Distance</strong>
-        <input type="text" formControlName="distance" class="form-control"  [(ngModel)]="place.distance"  placeholder="Enter distance" required>
-      </label>
-    </div>
-    <button type="submit" [disabled]="!placeForm.valid" class="btn btn-info">Submit</button>
-    </form> -->
+     <label for="state">
+       <strong>State</strong>
+       <input type="text" formControlName="state" class="form-control" placeholder="Enter state"  [(ngModel)]="place.state"  required>
+     </label>
+  </div>
+
+  <div class="form-group">
+   <label for="distance">
+     <strong>Distance</strong>
+       <input type="text" formControlName="distance" class="form-control"  [(ngModel)]="place.distance"  placeholder="Enter distance" required>
+     </label>
+   </div>
+   <button type="submit" [disabled]="!placeForm.valid" class="btn btn-info">Submit</button>
+   </form> -->
 <!-- 
   </div>
 </div> -->

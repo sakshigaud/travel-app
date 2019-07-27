@@ -29,10 +29,12 @@ deletePlace: boolean;
 
   delete(place){
 
-   this.placeService.delete(place.id).subscribe(() =>this.placeService.findAll());
+   this.placeService.delete(place.id).subscribe(() =>this.placeService.findAll().subscribe((place: Place[]) =>
+   this.places = place
+ ));
     this.deletePlace = true;
     setTimeout(() => this.deletePlace = false, 2000);
-     }
+  }
 
    updatePlace(place){
      this.placeService.updatePlace(place).subscribe();
