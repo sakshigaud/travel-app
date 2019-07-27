@@ -29,3 +29,33 @@
   visibility: visible;
 
 }
+
+.item:hover{
+  cursor:pointer;
+}
+
+.header{
+  //font-weight: bold;
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+.card-body {
+  padding: 0.15rem 0.05rem 0.15rem 0.05rem
+}
+.header-tab{
+  padding:10px 0 12px 0; 
+  margin-left:1px;
+  border-bottom: 2px solid lightgray;
+  background-color: grey;
+  width:100%;
+}
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+.item {
+  padding-top:10px;
+  padding-bottom:10px;
+  border-bottom: 1px solid lightgray;
+}

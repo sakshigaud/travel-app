@@ -26,11 +26,6 @@ public class PlaceController {
         return "Returned from database";
     }
 
-    @GetMapping
-    public String home(Place place) {
-        return "forward:/index.html";
-    }
-
     @DeleteMapping(path="/places/{id}")
     public void deletePlace(@PathVariable Integer id){
         travelRepo.deleteById(id);
@@ -38,6 +33,7 @@ public class PlaceController {
 
     @PutMapping(path="/places/{id}")
     public String updatePlace(@RequestBody Place newPlace, @PathVariable Integer id) {
+        System.out.print(newPlace);
         travelRepo.findById(id)
                 .map(place -> {
                     place.setName(newPlace.getName());

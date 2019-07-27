@@ -4,8 +4,8 @@ import { PlaceFormComponent } from './place-form/place-form.component';
 import { PlaceListComponent } from './place-list/place-list.component';
 
 const routes: Routes = [
-  {path: 'places', component: PlaceListComponent},
-  {path: 'addPlaces', component: PlaceFormComponent},
+  {path: 'rest/places', component: PlaceListComponent},
+  {path: 'rest/addPlaces', component: PlaceFormComponent},
 ]
 
 

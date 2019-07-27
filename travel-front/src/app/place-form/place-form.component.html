@@ -1,5 +1,8 @@
  <div class="card my-5">
     <div class="card-body">
+        <div *ngIf="addPlace" class="alert alert-success">
+            <strong>Place Added!</strong> 
+          </div>
       <form (ngSubmit)="onSubmit()" #placeForm="ngForm" >
         <div class="form-group">
           <label for="name">Name</label>
@@ -32,3 +35,37 @@
     </div>
   </div>
  
+
+
+ <!-- <div class="card my-5">
+    <div class="card-body">
+      
+      <div *ngIf="addPlace" class="alert alert-success">
+          <strong>Place Added!</strong> 
+        </div>
+  <form  [formGroup]="placeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <label for="city">
+        <strong>City</strong>
+        <input type="text" formControlName="city" class="form-control"  placeholder="Enter city name"  [(ngModel)]="place.name"  required>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="state">
+        <strong>State</strong>
+        <input type="text" formControlName="state" class="form-control" placeholder="Enter state"  [(ngModel)]="place.state"  required>
+      </label>
+   </div>
+
+   <div class="form-group">
+    <label for="distance">
+      <strong>Distance</strong>
+        <input type="text" formControlName="distance" class="form-control"  [(ngModel)]="place.distance"  placeholder="Enter distance" required>
+      </label>
+    </div>
+    <button type="submit" [disabled]="!placeForm.valid" class="btn btn-info">Submit</button>
+    </form> -->
+<!-- 
+  </div>
+</div> -->

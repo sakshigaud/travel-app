@@ -14,12 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     PlaceListComponent,
-    PlaceFormComponent,
+    PlaceFormComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule
+    AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
     
   ],
   providers: [PlaceService],
